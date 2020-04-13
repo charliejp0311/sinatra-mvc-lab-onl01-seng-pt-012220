@@ -17,7 +17,7 @@ class PigLatinizer
       # @endding = []
       @single_word = word.split("")
       vowels = %w[a e i o u A E I O U]
-      if (@single_word.length == 1) || vowels.include?(@single_word.first)
+      if vowels.include?(@single_word.first)
         @single_word.push("w","a","y")
       else
         until vowels.include?(@single_word.first)
