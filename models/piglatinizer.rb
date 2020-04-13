@@ -1,20 +1,16 @@
 class PigLatinizer
-  attr_accessor :u_text, :words, :piglatin, :single_word, :ending
+  attr_accessor :words, :piglatin, :single_word, :ending
   def initialize
-    # @u_text = u_text
     @words = []
     @piglatin = ""
     @single_word = []
     @ending = []
-    # binding.pry
   end
 
   def piglatinize(u_text)
-    @u_text = u_text
-    @words = @u_text.split(" ")
+    @words = u_text.split(" ")
     i=0
     @words.each do |word|
-      # @endding = []
       @single_word = word.split("")
       vowels = %w[a e i o u A E I O U]
       if vowels.include?(@single_word.first)
